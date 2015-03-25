@@ -1,14 +1,14 @@
 require 'sinatra'
 require  'sinatra/reloader'
-require 'active-record'
+require 'active_record'
 
-set :bind, '192.168.33.10'
-set :port,  3000
+#set :bind, '192.168.33.10'
+#set :port,  3000
 
-class Contribution<ActiveRecord::Base
-	establish_connection(adapter:"splite3",datebase:"./db/bbs.db")
-get'/'do
-	'Hello Sinatra!'
+require './models/contributions.rb'
+
+get '/' do
+  @contents = Contribution.order("id desc").all
 	erb :index
 end
 post '/new'do
@@ -17,5 +17,5 @@ post '/new'do
 	Contribution.create(:name => params[:user_name],
 						:body => params[:body])	
 	redirect '/'
-	end									   
+										   
 end
