@@ -3,8 +3,8 @@ class CreateContributions < ActiveRecord::Migration
       create_table :contributions do |t|
           t.string :name
           t.text :body
+          t.string :link
           t.string :img
-          
           t.timestamps
         end
   end

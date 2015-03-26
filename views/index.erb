@@ -5,16 +5,22 @@
 		<title>Document</title>
 	</head>
 	<body>
-	 	<h1>Hello Sinatra!</h1>
+	 	<center><h1>friend conect</h1></center>
 	 	<form action="/new"  method="post">
-	 		<p>名前:<input type="text" name="user_name"></p>
-	 		<p>内容:<input type="text" name="body"></p>
-	 		<p><input type="submit" value="投稿"></p>
+            <center><p>名前:<input type="text" name="user_name"></p></center><%#名前の横にテキストボックスを作成するプログラム%>
+	 		<center><p>趣味:<input type="text" name="body"></p></center><%#内容の横にテキストボックスをs作成%>
+            <center><p>Link:<input type="text" name="link_url"</center>
+            <center><p><input type="submit" value="投稿" style="display:block;width:100px;"></p></center><%#投稿というボタンを作成するプログラム%>
+
 	 	<ul>
+            <% @contents.each do |content| %>
+            
 	 		<li>
-	 			<p>なまえ</p>
-	 			<p>ここに投稿する内容</p>
+                <center><p><%= content.name %></p></center>
+	 			<center><p><%= content.body %></p></center>
+                <center><p><%= content.link %></p></center>
 	 		</li>
+            <% end %>
 	 	</ul>
 	</body>
 </html>

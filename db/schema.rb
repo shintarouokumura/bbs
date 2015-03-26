@@ -16,6 +16,7 @@ ActiveRecord::Schema.define(version: 20150325072225) do
   create_table "contributions", force: :cascade do |t|
     t.string   "name"
     t.text     "body"
+    t.string   "link"
     t.string   "img"
     t.datetime "created_at"
     t.datetime "updated_at"
