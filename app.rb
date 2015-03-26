@@ -7,6 +7,7 @@ set :port,  3000
 
 require './models/contributions.rb'
 
+
 get '/' do
   @contents = Contribution.order("id desc").all
 	erb :index
