@@ -1,26 +1,88 @@
 <!DOCTYPE html>
 <html lang="ja">
-	<head>
-		<meta charset="UTF-8">
-		<title>Document</title>
-	</head>
-	<body>
-	 	<center><h1>friend conect</h1></center>
-	 	<form action="/new"  method="post">
-            <center><p>名前:<input type="text" name="user_name"></p></center><%#名前の横にテキストボックスを作成するプログラム%>
-	 		<center><p>趣味:<input type="text" name="body"></p></center><%#内容の横にテキストボックスをs作成%>
-            <center><p>Link:<input type="text" name="link_url"</center>
-            <center><p><input type="submit" value="投稿" style="display:block;width:100px;"></p></center><%#投稿というボタンを作成するプログラム%>
+<head>
+  <meta charset="UTF-8">
+  <title>Original App</title>
+  <!-- Loading Flat UI -->
 
-	 	<ul>
-            <% @contents.each do |content| %>
-            
-	 		<li>
-                <center><p><%= content.name %></p></center>
-	 			<center><p><%= content.body %></p></center>
-                <center><p><%= content.link %></p></center>
-	 		</li>
-            <% end %>
-	 	</ul>
-	</body>
+  <link href="dist/css/flat-ui.css" rel="stylesheet">
+  <link href="docs/assets/css/demo.css" rel="stylesheet">
+  <link href="dist/css/vendor/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <style>
+        body {
+            background-color: #00FA9A;
+            background-image: url("images/background.png");
+        }
+    </style>
+  <link rel="shortcut icon" href="img/favicon.ico">
+</head>
+<body>
+
+    <div class="container">
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4>投稿</h4>
+            </div>
+            <div class="panel-body">
+                <form action="/new"  method="post">
+                    <div class="form-group">
+                        <center><p>名前:<input type="text" name="user_name"></p></center><%#名前の横にテキストボックスを作成するプログラム%>
+                    </div>
+                    <div class="form-group">
+                        <center><p>趣味:<input type="text" name="body"></p></center><%#内容の横にテキストボックスをs作成%>
+                    </div>
+                    <center><p>Link:<input type="text" name="link_url"</center>
+
+                    <center><p><input type="submit" class="btn btn-default" value="投稿" style="display:block;width:100px;"></p></center><%#投稿というボタンを作成するプログラム%>
+
+                </div>
+            </div>
+            <!--aa-->
+            <center><h1>friend conect</h1></center>
+
+
+            <ul>
+                <% @contents.each do |content| %>
+
+                <li>
+                    <center><p><%= content.name %></p></center>
+                    <center><p><%= content.body %></p></center>
+                    <center><p><%= content.link %></p></center>
+                </li>
+                <% end %>
+            </ul>
+            <!--aa-->
+        </div>
+
+    </div> <!-- /container -->
+
+
+
+
+
+    <!--この下はfooterだよ-->
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-7">
+            <h3 class="footer-title">Subscribe</h3>
+            <p>なんか入力する
+                <a href="http://designmodo.com/flat-free" target="_blank">なんか入力する</a>
+            </p>
+
+
+          </div> <!-- /col-xs-7 -->
+        </div>
+     </div>
+    </footer>
+    <script src="dist/js/vendor/jquery.min.js"></script>
+    <script src="dist/js/vendor/video.js"></script>
+    <script src="dist/js/flat-ui.min.js"></script>
+    <script src="docs/assets/js/application.js"></script>
+
+</body>
 </html>

@@ -2,19 +2,14 @@ require 'sinatra'
 require  'sinatra/reloader' #sinatra/reloderはサーバーを再起動しなくてもよいというプログラム
 require 'active_record'
 
-set :bind, '192.168.33.10'
-set :port,  3000
+# set :bind, '192.168.33.10'
+# set :port,  3000
 
 class Contribution < ActiveRecord::Base
     establish_connection(adapter: "sqlite3",database: "./db/development.db")
 end
 
 require './models/contributions.rb'
-
-
-get '/i' do
-	erb :index2
-end
 
 get '/' do
   @contents = Contribution.order("id desc").all
